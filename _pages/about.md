@@ -6,15 +6,20 @@ redirect_from:
   - /about/
   - /about.html
 ---
-My research interests lie at the intersection of **software security** and **artificial intelligence safety**. Specifically, I’m passionate about:
+<h1>Ziqi Huang | 黄子棋</h1>
+Hi there! I am Ziqi Huang, a fourth-year undergraduate student at [Tongji University](https://cs.tongji.edu.cn/index.htm), majoring in Information Security, [Guohao Academic](https://ghc.tongji.edu.cn/).
+<! -- I am a M.S. student at the Intelligent Information Processing Lab, Department of Computer Science and Technology, Tongji University (Shanghai, China), under the supervision of Prof. [Zhihua Wei](https://cs.tongji.edu.cn/info/1061/2797.htm).-->
+<! -- I have spent a wonderful semester at [Johns Hopkins University](https://www.jhu.edu/). Since then, I have been working closely with Prof..--> 
+My research interests lie at the intersection of 🤖**artificial intelligence safety**. Specifically, I’m passionate about:
 
-🛡️ Software safety and secure system design
+- large language model value alignment
+- Controllable text generation in LLMs/VLMs
+- defending against jailbreak Attacks on Large Language Models
 
-🐞 Vulnerability detection and automated repair, including static/dynamic analysis and LLM-based patching
-
-🤖 AI safety, with a focus on multimodal alignment, LLM alignment, and agent robustness in complex environments
-
-
+## Miscellaneous
+- I love badminton, soccer and basketball
+- I am a big fan of [Stephen Curry](https://en.wikipedia.org/wiki/Stephen_Curry) and [Golden Warriors](https://www.nba.com/warriors/)
+- I love playing Ukelele and Violin
 
 <!-- A data-driven personal website
 ======
