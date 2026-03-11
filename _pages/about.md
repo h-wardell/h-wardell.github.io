@@ -8,20 +8,32 @@ redirect_from:
 ---
 <h1>Ziqi Huang | 黄子棋</h1>
 Hi there! I am Ziqi Huang, a fourth-year undergraduate student at [Tongji University](https://cs.tongji.edu.cn/index.htm), majoring in Information Security, [Guohao Academic](https://ghc.tongji.edu.cn/).
-<!-- I am a M.S. student at the Intelligent Information Processing Lab, Department of Computer Science and Technology, Tongji University (Shanghai, China), under the supervision of Prof. [Zhihua Wei](https://cs.tongji.edu.cn/info/1061/2797.htm). -->
+I am a M.S. student Candidate at the Intelligent Information Processing Lab, Department of Computer Science and Technology, Tongji University (Shanghai, China), under the supervision of Prof. [Zhihua Wei](https://cs.tongji.edu.cn/info/1061/2797.htm).
 
-<!-- I have spent a wonderful semester at [Johns Hopkins University](https://www.jhu.edu/). Since then, I have been working closely with Prof. -->
+<!-- I have spent a wonderful semester at [Johns Hopkins University](https://www.jhu.edu/). Since then, I have been working closely with Prof. I want a intern opportunity :(-->
 
-My research interests lie at the intersection of 🤖**artificial intelligence safety**. Specifically, I’m passionate about:
+My research interests lie at the intersection of **AI safety**, **AI Deception**, **Interpretability**. Specifically, I’m passionate about:
 
 - large language model value alignment
-- Controllable text generation in LLMs/VLMs
-- defending against jailbreak Attacks on Large Language Models
+- Steering Vector && Internal mechanisms of large models
 
-## Miscellaneous
-- I love badminton, soccer and basketball
-- I am a big fan of [Stephen Curry](https://en.wikipedia.org/wiki/Stephen_Curry) and [Golden Warriors](https://www.nba.com/warriors/)
-- I love playing Ukelele and Violin
+Email: 2253726 [at] tongji.edu.cn   /   hzq1915851440 [at] gmail.com
+
+
+
+<a href="/images/wechat-qr.png" target="_blank" rel="noopener">💬 微信联系（点击查看二维码）</a>
+
+## 𝓜𝓲𝓼𝓬𝓮𝓵𝓵𝓪𝓷𝓮𝓸𝓾𝓼
+
+### ⚽ 𝓢𝓹𝓸𝓻𝓽𝓼
+
+- Badminton, soccer, and basketball  
+- Big fan of Stephen Curry and the Golden State Warriors
+
+### 🎵 𝓐𝓻𝓽𝓼 & 𝓒𝓻𝓮𝓪𝓽𝓲𝓿𝓮 𝓘𝓷𝓽𝓮𝓻𝓮𝓼𝓽𝓼
+
+- Playing the ukulele and violin  
+- Photography and singing
 
 <!-- A data-driven personal website
 ======

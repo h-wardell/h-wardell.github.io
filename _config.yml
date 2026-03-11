@@ -22,9 +22,9 @@ repository               : "academicpages/academicpages.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "curry.png"
+  avatar           : "profile.jpg"
   name             : "wardell-H"
-  bio              : "dive in security"
+  bio              : "LLM Security/Embodied AI Security"
   location         : "Shanghai, China"
   employer         : "Tongji University"
   uri              : # URL
