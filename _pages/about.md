@@ -32,13 +32,7 @@ Email: 2253726 [at] tongji.edu.cn   /   hzq1915851440 [at] gmail.com
 - **[2025/09]** I started my research on **AI Security**.
 
 ## Publication
-<table>
-<tr>
-<td width="30%">
-<img src="/images/paper-example.png" width="260" alt="Paper thumbnail">
-</td>
-
-<td width="70%">
+![Paper thumbnail](/images/paper-example.png){: width="260px" }
 
 ### [Toward Safer Large Language Models via Internal Mechanism Analysis](https://arxiv.org/abs/)
 
@@ -49,10 +43,6 @@ Email: 2253726 [at] tongji.edu.cn   /   hzq1915851440 [at] gmail.com
 [arXiv](https://arxiv.org/abs/) / [Code](https://github.com/wardell-H/paper-example) / [Project](https://wardell-h.github.io/projects/CEVA/)
 
 A brief summary: we study interpretable internal representations and propose a practical safety-alignment method for reducing deceptive behavior in LLMs.
-
-</td>
-</tr>
-</table>
 
 ## 𝓜𝓲𝓼𝓬𝓮𝓵𝓵𝓪𝓷𝓮𝓸𝓾𝓼
 
