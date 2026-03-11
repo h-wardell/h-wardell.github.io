@@ -21,7 +21,14 @@ Email: 2253726 [at] tongji.edu.cn   /   hzq1915851440 [at] gmail.com
 
 
 
-<a href="/images/wechat-qr.png" target="_blank" rel="noopener">💬 微信联系（点击查看二维码）</a>
+<a href="https://x.com/wardell_h0111" </a> Twitter /<a href="/images/wechat-qr.jpg" target="_blank" rel="noopener">💬 Wechat </a>
+
+## News
+
+- **[2025/09]** I started my research on **AI Security**.
+
+## Publication
+
 
 ## 𝓜𝓲𝓼𝓬𝓮𝓵𝓵𝓪𝓷𝓮𝓸𝓾𝓼
 
@@ -32,8 +39,8 @@ Email: 2253726 [at] tongji.edu.cn   /   hzq1915851440 [at] gmail.com
 
 ### 🎵 𝓐𝓻𝓽𝓼 & 𝓒𝓻𝓮𝓪𝓽𝓲𝓿𝓮 𝓘𝓷𝓽𝓮𝓻𝓮𝓼𝓽𝓼
 
-- Playing the ukulele and violin  
-- Photography and singing
+- Playing the Ukulele and Violin  
+- Photography, Singing, Cooking
 
 <!-- A data-driven personal website
 ======
