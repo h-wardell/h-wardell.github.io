@@ -32,17 +32,22 @@ Email: 2253726 [at] tongji.edu.cn   /   hzq1915851440 [at] gmail.com
 - **[2025/09]** I started my research on **AI Security**.
 
 ## Publication
-![Paper thumbnail](/images/paper-example.png){: width="260px" }
+* indicates equal contribution
 
-### [Toward Safer Large Language Models via Internal Mechanism Analysis](https://arxiv.org/abs/)
-
-**Ziqi Huang**, Author B, Author C
-
-*xxxx 2026*
-
-[arXiv](https://arxiv.org/abs/) / [Code](https://github.com/wardell-H/paper-example) / [Project](https://wardell-h.github.io/projects/CEVA/)
-
-A brief summary: we study interpretable internal representations and propose a practical safety-alignment method for reducing deceptive behavior in LLMs.
+<div style="display:flex; gap:22px; align-items:flex-start; margin:14px 0 30px 0; flex-wrap:wrap;">
+  <img src="/images/paper-example.png" alt="Paper thumbnail" style="width:260px; max-width:100%; height:auto; border-radius:6px;">
+  <div style="flex:1; min-width:280px;">
+    <h3 style="margin:0 0 6px 0;"><a href="https://arxiv.org/abs/">Toward Safer Large Language Models via Internal Mechanism Analysis</a></h3>
+    <p style="margin:0 0 4px 0;"><strong>Ziqi Huang</strong>, Author B, Author C</p>
+    <p style="margin:0 0 6px 0;"><em>xxxx 2026</em></p>
+    <p style="margin:0 0 10px 0;">
+      <a href="https://arxiv.org/abs/">arXiv</a> /
+      <a href="https://github.com/wardell-H/paper-example">Code</a> /
+      <a href="https://wardell-h.github.io/projects/CEVA/">Project</a>
+    </p>
+    <p style="margin:0; line-height:1.45;">A brief summary: we study interpretable internal representations and propose a practical safety-alignment method for reducing deceptive behavior in LLMs.</p>
+  </div>
+</div>
 
 ## 𝓜𝓲𝓼𝓬𝓮𝓵𝓵𝓪𝓷𝓮𝓸𝓾𝓼
 
