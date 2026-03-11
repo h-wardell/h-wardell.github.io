@@ -21,14 +21,34 @@ Email: 2253726 [at] tongji.edu.cn   /   hzq1915851440 [at] gmail.com
 
 
 
-<a href="https://x.com/wardell_h0111" </a> Twitter /<a href="/images/wechat-qr.jpg" target="_blank" rel="noopener">💬 Wechat </a>
+<a href="[https://](https://github.com/wardell-H)" target="_blank" rel="noopener"> Github</a> /<a href="https://x.com/wardell_h0111" target="_blank" rel="noopener"> Twitter</a> / <a href="/images/wechat-qr.jpg" target="_blank" rel="noopener"> Wechat</a>
 
 ## News
 
 - **[2025/09]** I started my research on **AI Security**.
 
 ## Publication
+<table>
+<tr>
+<td width="30%">
+<img src="images/paper1.png" width="260">
+</td>
 
+<td width="70%">
+
+### Paper Title
+
+Author1, Author2, Author3
+
+*Conference / Journal, Year*
+
+[arxiv](#) / [code](#) / [project](#)
+
+Short description of the paper.
+
+</td>
+</tr>
+</table>
 
 ## 𝓜𝓲𝓼𝓬𝓮𝓵𝓵𝓪𝓷𝓮𝓸𝓾𝓼
 
