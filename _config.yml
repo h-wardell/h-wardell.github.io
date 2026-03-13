@@ -27,7 +27,7 @@ author:
   bio              : "LLM Security/Embodied AI Security"
   location         : "Shanghai, China"
   employer         : "Tongji University"
-  uri              : # URL
+  uri              : "https://wardell-h.github.io/butterflyblog/"
 
   # Academic websites
   academia         : # URL
@@ -35,7 +35,6 @@ author:
   # googlescholar    : "https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
   impactstory      : # URL
   orcid            : "https://orcid.org/my-orcid?orcid=0009-0009-2024-4153"
-  website          : "https://wardell-h.github.io/butterflyblog/"
 
   # Repositories and software development
   bitbucket        : # Username - Update with your username on the site
