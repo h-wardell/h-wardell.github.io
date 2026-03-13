@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/butterflyblog/2026/03/13/hello-world/"/>
+      <url>/butterflyblog/2026/03/13/hello-world/</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>labuladong 01｜前言：标准模板库 STL</title>
+      <link href="/butterflyblog//algorithm/labuladong/01-stl-overview/"/>
+      <url>/butterflyblog//algorithm/labuladong/01-stl-overview/</url>
+      
+        <content type="html"><![CDATA[<h1 id="前言：标准模板库-STL"><a href="#前言：标准模板库-STL" class="headerlink" title="前言：标准模板库 STL"></a>前言：标准模板库 STL</h1><blockquote><p>这一篇是 labuladong 笔记的第 1 篇，目标是先把刷题最常用的 STL 模板整理成“能直接复制用”的最小集合。</p></blockquote><h2 id="0-刷题环境提醒"><a href="#0-刷题环境提醒" class="headerlink" title="0. 刷题环境提醒"></a>0. 刷题环境提醒</h2><p>机试常见环境是 <code>C++11</code>，建议先确认编译参数：</p><ul><li><code>-std=c++11</code></li></ul><p>常用头文件：</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br></pre></td></tr></table></figure><hr><h2 id="1-数据结构：高频-API-清单"><a href="#1-数据结构：高频-API-清单" class="headerlink" title="1. 数据结构：高频 API 清单"></a>1. 数据结构：高频 API 清单</h2><h3 id="1-1-vector"><a href="#1-1-vector" class="headerlink" title="1.1 vector"></a>1.1 <code>vector</code></h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;<span class="type">int</span>&gt; a;</span><br><span class="line"><span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">b</span><span class="params">(<span class="number">5</span>, <span class="number">0</span>)</span></span>;   <span class="comment">// 5个0</span></span><br><span class="line"></span><br><span class="line">a.<span class="built_in">push_back</span>(<span class="number">3</span>);</span><br><span class="line">a.<span class="built_in">pop_back</span>();</span><br><span class="line">a.<span class="built_in">size</span>();</span><br><span class="line">a.<span class="built_in">empty</span>();</span><br><span class="line"><span class="built_in">sort</span>(a.<span class="built_in">begin</span>(), a.<span class="built_in">end</span>());</span><br><span class="line"><span class="built_in">reverse</span>(a.<span class="built_in">begin</span>(), a.<span class="built_in">end</span>());</span><br></pre></td></tr></table></figure><h3 id="1-2-stack-queue-deque"><a href="#1-2-stack-queue-deque" class="headerlink" title="1.2 stack / queue / deque"></a>1.2 <code>stack</code> / <code>queue</code> / <code>deque</code></h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">stack&lt;<span class="type">int</span>&gt; st;</span><br><span class="line">st.<span class="built_in">push</span>(<span class="number">1</span>); st.<span class="built_in">top</span>(); st.<span class="built_in">pop</span>(); st.<span class="built_in">empty</span>();</span><br><span class="line"></span><br><span class="line">queue&lt;<span class="type">int</span>&gt; q;</span><br><span class="line">q.<span class="built_in">push</span>(<span class="number">1</span>); q.<span class="built_in">front</span>(); q.<span class="built_in">back</span>(); q.<span class="built_in">pop</span>();</span><br><span class="line"></span><br><span class="line">deque&lt;<span class="type">int</span>&gt; dq;</span><br><span class="line">dq.<span class="built_in">push_front</span>(<span class="number">1</span>); dq.<span class="built_in">push_back</span>(<span class="number">2</span>);</span><br><span class="line">dq.<span class="built_in">front</span>(); dq.<span class="built_in">back</span>(); dq.<span class="built_in">pop_front</span>(); dq.<span class="built_in">pop_back</span>();</span><br></pre></td></tr></table></figure><h3 id="1-3-unordered-map-unordered-set"><a href="#1-3-unordered-map-unordered-set" class="headerlink" title="1.3 unordered_map / unordered_set"></a>1.3 <code>unordered_map</code> / <code>unordered_set</code></h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">unordered_map&lt;string, <span class="type">int</span>&gt; mp;</span><br><span class="line">mp[<span class="string">&quot;apple&quot;</span>] = <span class="number">1</span>;</span><br><span class="line">mp.<span class="built_in">count</span>(<span class="string">&quot;apple&quot;</span>);</span><br><span class="line">mp.<span class="built_in">find</span>(<span class="string">&quot;apple&quot;</span>);</span><br><span class="line"></span><br><span class="line">unordered_set&lt;<span class="type">int</span>&gt; st;</span><br><span class="line">st.<span class="built_in">insert</span>(<span class="number">10</span>);</span><br><span class="line">st.<span class="built_in">count</span>(<span class="number">10</span>);</span><br><span class="line">st.<span class="built_in">erase</span>(<span class="number">10</span>);</span><br></pre></td></tr></table></figure><h3 id="1-4-priority-queue"><a href="#1-4-priority-queue" class="headerlink" title="1.4 priority_queue"></a>1.4 <code>priority_queue</code></h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 大根堆（默认）</span></span><br><span class="line">priority_queue&lt;<span class="type">int</span>&gt; maxHeap;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 小根堆</span></span><br><span class="line">priority_queue&lt;<span class="type">int</span>, vector&lt;<span class="type">int</span>&gt;, greater&lt;<span class="type">int</span>&gt;&gt; minHeap;</span><br><span class="line"></span><br><span class="line">minHeap.<span class="built_in">push</span>(<span class="number">3</span>);</span><br><span class="line">minHeap.<span class="built_in">push</span>(<span class="number">1</span>);</span><br><span class="line">minHeap.<span class="built_in">top</span>(); <span class="comment">// 1</span></span><br></pre></td></tr></table></figure><hr><h2 id="2-算法工具：algorithm-numeric"><a href="#2-算法工具：algorithm-numeric" class="headerlink" title="2. 算法工具：algorithm / numeric"></a>2. 算法工具：<code>algorithm</code> / <code>numeric</code></h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;<span class="type">int</span>&gt; nums = &#123;<span class="number">4</span>, <span class="number">1</span>, <span class="number">7</span>, <span class="number">2</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">sort</span>(nums.<span class="built_in">begin</span>(), nums.<span class="built_in">end</span>());</span><br><span class="line"><span class="type">int</span> mn = *<span class="built_in">min_element</span>(nums.<span class="built_in">begin</span>(), nums.<span class="built_in">end</span>());</span><br><span class="line"><span class="type">int</span> mx = *<span class="built_in">max_element</span>(nums.<span class="built_in">begin</span>(), nums.<span class="built_in">end</span>());</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> s = <span class="built_in">accumulate</span>(nums.<span class="built_in">begin</span>(), nums.<span class="built_in">end</span>(), <span class="number">0</span>);</span><br><span class="line"><span class="type">bool</span> has = <span class="built_in">binary_search</span>(nums.<span class="built_in">begin</span>(), nums.<span class="built_in">end</span>(), <span class="number">7</span>);</span><br></pre></td></tr></table></figure><hr><h2 id="3-两个必备实现"><a href="#3-两个必备实现" class="headerlink" title="3. 两个必备实现"></a>3. 两个必备实现</h2><h3 id="3-1-最大公约数-gcd"><a href="#3-1-最大公约数-gcd" class="headerlink" title="3.1 最大公约数 gcd"></a>3.1 最大公约数 <code>gcd</code></h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">gcd_</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> </span>&#123;</span><br><span class="line">  a = <span class="built_in">abs</span>(a); b = <span class="built_in">abs</span>(b);</span><br><span class="line">  <span class="keyword">while</span> (b != <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="type">int</span> t = b;</span><br><span class="line">    b = a % b;</span><br><span class="line">    a = t;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> a;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="3-2-最小公倍数-lcm"><a href="#3-2-最小公倍数-lcm" class="headerlink" title="3.2 最小公倍数 lcm"></a>3.2 最小公倍数 <code>lcm</code></h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">lcm_</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (a == <span class="number">0</span> || b == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">abs</span>(a / <span class="built_in">gcd_</span>(a, b) * b);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><hr><h2 id="4-第一篇复盘"><a href="#4-第一篇复盘" class="headerlink" title="4. 第一篇复盘"></a>4. 第一篇复盘</h2><ul><li>不追求一次记住全部 STL，而是先掌握“刷题高频 API”。</li><li>遇到不熟悉容器时，再回到这篇做速查。</li><li>下一篇准备写：<strong>基础：数组（静态/动态）</strong>。</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Algorithm </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> labuladong </tag>
+            
+            <tag> STL </tag>
+            
+            <tag> C++ </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>CS188 - Course Overview</title>
+      <link href="/butterflyblog//ai/cs188/01-course-overview/"/>
+      <url>/butterflyblog//ai/cs188/01-course-overview/</url>
+      
+        <content type="html"><![CDATA[<h2 id="课程信息"><a href="#课程信息" class="headerlink" title="课程信息"></a>课程信息</h2><ul><li>课程：CS188 (Introduction to Artificial Intelligence)</li><li>主题：Course Overview</li><li>状态：已完成第一版</li></ul><h2 id="1-核心问题"><a href="#1-核心问题" class="headerlink" title="1. 核心问题"></a>1. 核心问题</h2><p>CS188 关注“智能体如何在环境中做决策”。</p><p>可以分成三类问题：</p><ol><li>已知规则下的最优搜索</li><li>不确定环境下的概率推断</li><li>交互环境下的序列决策（MDP / RL）</li></ol><h2 id="2-课程主线"><a href="#2-课程主线" class="headerlink" title="2. 课程主线"></a>2. 课程主线</h2><h3 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h3><ul><li>无信息搜索：DFS、BFS、UCS</li><li>有信息搜索：A*（核心是启发函数）</li></ul><h3 id="对抗与约束"><a href="#对抗与约束" class="headerlink" title="对抗与约束"></a>对抗与约束</h3><ul><li>博弈搜索：Minimax、Alpha-Beta Pruning</li><li>约束满足问题：Backtracking + Heuristics</li></ul><h3 id="概率图模型与推断"><a href="#概率图模型与推断" class="headerlink" title="概率图模型与推断"></a>概率图模型与推断</h3><ul><li>Bayes Net</li><li>HMM</li><li>精确推断与采样推断</li></ul><h3 id="决策与学习"><a href="#决策与学习" class="headerlink" title="决策与学习"></a>决策与学习</h3><ul><li>MDP + Bellman Equation</li><li>Value Iteration / Policy Iteration</li><li>Q-Learning</li></ul><h2 id="3-学习建议"><a href="#3-学习建议" class="headerlink" title="3. 学习建议"></a>3. 学习建议</h2><ul><li>搜索部分重点掌握“状态、动作、代价”的建模。</li><li>MDP 部分重点掌握状态价值与最优策略关系。</li><li>RL 部分重点掌握“探索与利用”的权衡。</li></ul><h2 id="4-一个最小例子：网格路径"><a href="#4-一个最小例子：网格路径" class="headerlink" title="4. 一个最小例子：网格路径"></a>4. 一个最小例子：网格路径</h2><p>把迷宫看成图：</p><ul><li>节点：坐标位置</li><li>边：可行动作</li><li>代价：每步代价或风险</li></ul><p>若边权相同，BFS 常可找到最短步数路径；若边权不同，优先考虑 UCS / A*。</p><h2 id="5-易错点"><a href="#5-易错点" class="headerlink" title="5. 易错点"></a>5. 易错点</h2><ul><li>混淆“最短步数”和“最小总代价”。</li><li>把启发函数写成高估，导致 A* 失去最优性保证。</li><li>MDP 中把即时奖励和长期回报混在一起。</li></ul><h2 id="6-我的理解"><a href="#6-我的理解" class="headerlink" title="6. 我的理解"></a>6. 我的理解</h2><p>CS188 的价值不只在算法本身，而在于“统一建模视角”：</p><ul><li>搜索解决“如何找路径”</li><li>概率解决“信息不完整怎么办”</li><li>RL 解决“边试边学怎么做”</li></ul><p>后续笔记会按这个结构展开。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> AI </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CS188 </tag>
+            
+            <tag> Search </tag>
+            
+            <tag> MDP </tag>
+            
+            <tag> RL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>CS229 - Supervised Learning Overview</title>
+      <link href="/butterflyblog//ai/cs229/01-supervised-learning-overview/"/>
+      <url>/butterflyblog//ai/cs229/01-supervised-learning-overview/</url>
+      
+        <content type="html"><![CDATA[<h2 id="课程信息"><a href="#课程信息" class="headerlink" title="课程信息"></a>课程信息</h2><ul><li>课程：CS229 (Machine Learning)</li><li>主题：Supervised Learning Overview</li><li>状态：已完成第一版</li></ul><h2 id="1-核心问题"><a href="#1-核心问题" class="headerlink" title="1. 核心问题"></a>1. 核心问题</h2><p>监督学习目标：学习一个映射 $f_\theta(x) \to y$，使模型在未见样本上也能表现良好。</p><h2 id="2-问题类型"><a href="#2-问题类型" class="headerlink" title="2. 问题类型"></a>2. 问题类型</h2><ul><li>回归：预测连续值</li><li>分类：预测离散标签</li></ul><h2 id="3-统一视角"><a href="#3-统一视角" class="headerlink" title="3. 统一视角"></a>3. 统一视角</h2><h3 id="数据"><a href="#数据" class="headerlink" title="数据"></a>数据</h3><ul><li>训练集：$(x^{(i)}, y^{(i)})$</li><li>验证集：调参用</li><li>测试集：最终评估</li></ul><h3 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h3><p>最小化经验风险：</p><script type="math/tex; mode=display">\min_{\theta} \frac{1}{m}\sum_{i=1}^{m} \mathcal{L}(f_\theta(x^{(i)}), y^{(i)})</script><h3 id="泛化"><a href="#泛化" class="headerlink" title="泛化"></a>泛化</h3><p>真正目标不是训练误差最小，而是测试误差可控。</p><h2 id="4-常见模型"><a href="#4-常见模型" class="headerlink" title="4. 常见模型"></a>4. 常见模型</h2><ul><li>Linear Regression：回归基线模型</li><li>Logistic Regression：二分类基线模型</li><li>SVM：最大间隔思想</li><li>Neural Networks：高表达能力</li></ul><h2 id="5-评估指标"><a href="#5-评估指标" class="headerlink" title="5. 评估指标"></a>5. 评估指标</h2><ul><li>回归：MSE / MAE / $R^2$</li><li>分类：Accuracy / Precision / Recall / F1 / AUC</li></ul><h2 id="6-易错点"><a href="#6-易错点" class="headerlink" title="6. 易错点"></a>6. 易错点</h2><ul><li>只看训练集准确率，不看泛化表现。</li><li>数据泄漏（测试信息进入训练阶段）。</li><li>指标选错（类别不平衡只看 Accuracy）。</li></ul><h2 id="7-我的理解"><a href="#7-我的理解" class="headerlink" title="7. 我的理解"></a>7. 我的理解</h2><p>CS229 的主线是“建模 + 优化 + 泛化”。</p><p>后续每个模型都可以用同一模板分析：</p><ol><li>假设是什么</li><li>损失函数是什么</li><li>如何优化</li><li>为什么能泛化</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> AI </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CS229 </tag>
+            
+            <tag> Machine Learning </tag>
+            
+            <tag> Supervised Learning </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>CS285 - Deep RL Overview</title>
+      <link href="/butterflyblog//ai/cs285/01-deep-rl-overview/"/>
+      <url>/butterflyblog//ai/cs285/01-deep-rl-overview/</url>
+      
+        <content type="html"><![CDATA[<h2 id="课程信息"><a href="#课程信息" class="headerlink" title="课程信息"></a>课程信息</h2><ul><li>课程：CS285 (Deep Reinforcement Learning)</li><li>主题：Deep RL Overview</li><li>状态：已完成第一版</li></ul><h2 id="1-核心问题"><a href="#1-核心问题" class="headerlink" title="1. 核心问题"></a>1. 核心问题</h2><p>在未知或高维环境中，智能体如何通过交互学习策略 $\pi(a|s)$，最大化长期回报。</p><h2 id="2-基本要素"><a href="#2-基本要素" class="headerlink" title="2. 基本要素"></a>2. 基本要素</h2><ul><li>状态 $s$</li><li>动作 $a$</li><li>奖励 $r$</li><li>策略 $\pi$</li><li>轨迹 $\tau = (s_0,a_0,r_0,…)$</li></ul><p>目标：</p><script type="math/tex; mode=display">J(\pi) = \mathbb{E}_{\tau \sim \pi}\left[\sum_{t=0}^{T} \gamma^t r_t\right]</script><h2 id="3-CS285-的典型路线"><a href="#3-CS285-的典型路线" class="headerlink" title="3. CS285 的典型路线"></a>3. CS285 的典型路线</h2><ol><li>Imitation Learning（先从专家数据学）</li><li>Policy Gradient（直接优化策略）</li><li>Actor-Critic（方差更稳）</li><li>Model-Based RL（学习环境模型提效）</li><li>Offline RL（只用离线数据训练）</li></ol><h2 id="4-为什么要-Deep-RL"><a href="#4-为什么要-Deep-RL" class="headerlink" title="4. 为什么要 Deep RL"></a>4. 为什么要 Deep RL</h2><p>经典 RL 在低维离散状态更容易；现实任务通常是高维连续空间（图像、机械臂、控制问题），需要深度网络做函数逼近。</p><h2 id="5-易错点"><a href="#5-易错点" class="headerlink" title="5. 易错点"></a>5. 易错点</h2><ul><li>只关注单次奖励，忽略累计回报。</li><li>训练不稳定时只调学习率，不看 reward scale 与探索策略。</li><li>忽略数据分布漂移（尤其是 offline RL）。</li></ul><h2 id="6-我的理解"><a href="#6-我的理解" class="headerlink" title="6. 我的理解"></a>6. 我的理解</h2><p>CS285 更偏“工程+研究”：</p><ul><li>同样一个想法，训练技巧不同，效果会有巨大差异。</li><li>需要同时关注理论目标、实现细节和实验稳定性。</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> AI </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CS285 </tag>
+            
+            <tag> Deep RL </tag>
+            
+            <tag> Policy Gradient </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>LLM Basics - Transformer 是什么</title>
+      <link href="/butterflyblog//ai/llm/01-transformer-what-is-it/"/>
+      <url>/butterflyblog//ai/llm/01-transformer-what-is-it/</url>
+      
+        <content type="html"><![CDATA[<h2 id="一句话定义"><a href="#一句话定义" class="headerlink" title="一句话定义"></a>一句话定义</h2><p>Transformer 是一种基于自注意力（Self-Attention）的序列建模架构，用并行计算替代了 RNN 的串行递推。</p><h2 id="为什么需要它"><a href="#为什么需要它" class="headerlink" title="为什么需要它"></a>为什么需要它</h2><p>RNN/LSTM 的主要问题：</p><ol><li>长距离依赖难建模</li><li>训练串行，难以高效并行</li></ol><p>Transformer 通过 Attention 让任意位置直接交互，并显著提升训练效率。</p><h2 id="核心结构"><a href="#核心结构" class="headerlink" title="核心结构"></a>核心结构</h2><p>一个标准 Transformer Block 通常包含：</p><ol><li>Multi-Head Self-Attention</li><li>Feed-Forward Network (FFN)</li><li>Residual Connection</li><li>LayerNorm</li></ol><h2 id="Self-Attention-直观解释"><a href="#Self-Attention-直观解释" class="headerlink" title="Self-Attention 直观解释"></a>Self-Attention 直观解释</h2><p>对每个 token：</p><ul><li>用 $Q$ 提问</li><li>用其他 token 的 $K$ 匹配相关性</li><li>按权重加权 $V$ 聚合信息</li></ul><p>公式：</p><script type="math/tex; mode=display">\text{Attention}(Q,K,V)=\text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V</script><h2 id="它解决了什么问题"><a href="#它解决了什么问题" class="headerlink" title="它解决了什么问题"></a>它解决了什么问题</h2><ul><li>建模远距离依赖更直接</li><li>训练可并行，吞吐更高</li><li>扩展到大模型更自然（参数规模、数据规模、算力规模）</li></ul><h2 id="它的代价"><a href="#它的代价" class="headerlink" title="它的代价"></a>它的代价</h2><ul><li>注意力复杂度对序列长度近似为 $O(n^2)$</li><li>长上下文推理会带来显存与时延压力</li></ul><h2 id="与-RNN-的对比"><a href="#与-RNN-的对比" class="headerlink" title="与 RNN 的对比"></a>与 RNN 的对比</h2><div class="table-container"><table><thead><tr><th>维度</th><th>RNN/LSTM</th><th>Transformer</th></tr></thead><tbody><tr><td>计算方式</td><td>串行</td><td>并行</td></tr><tr><td>长依赖</td><td>较弱</td><td>较强</td></tr><tr><td>训练效率</td><td>较低</td><td>较高</td></tr><tr><td>长文本成本</td><td>中</td><td>高（注意力二次复杂度）</td></tr></tbody></table></div><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>Transformer 是现代 LLM 的基础骨架。</p><p>后续可继续拆分为：</p><ul><li>Tokenizer</li><li>Positional Encoding / RoPE</li><li>KV Cache</li><li>SFT / RLHF / DPO</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> AI </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LLM </tag>
+            
+            <tag> Transformer </tag>
+            
+            <tag> Attention </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>

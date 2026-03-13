@@ -1,0 +1,687 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>AI Notes | Wardell-H's Blog</title><meta name="author" content="Ziqi Huang"><meta name="copyright" content="Ziqi Huang"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="AI 课程笔记与大模型基础概念整理">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI Notes">
+<meta property="og:url" content="https://wardell-h.github.io/ai/index.html">
+<meta property="og:site_name" content="Wardell-H&#39;s Blog">
+<meta property="og:description" content="AI 课程笔记与大模型基础概念整理">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://wardell-h.github.io/img/curry-icon.jpg">
+<meta property="article:published_time" content="2026-03-12T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-03-13T07:28:34.807Z">
+<meta property="article:author" content="Ziqi Huang">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://wardell-h.github.io/img/curry-icon.jpg"><script type="application/ld+json"></script><link rel="shortcut icon" href="/butterflyblog/img/curry-profile.ico"><link rel="canonical" href="https://wardell-h.github.io/ai/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/butterflyblog/css/index.css?v=5.5.4"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/butterflyblog/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'AI Notes',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'page'
+}</script><meta name="generator" content="Hexo 8.1.1"></head><body><div class="bg-animation" id="web_bg" style="background-image: url(/butterflyblog/img/background.jpg);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/butterflyblog/img/curry-icon.jpg" onerror="this.onerror=null;this.src='/butterflyblog/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/butterflyblog/archives/"><div class="headline">Articles</div><div class="length-num">6</div></a><a href="/butterflyblog/tags/"><div class="headline">Tags</div><div class="length-num">16</div></a><a href="/butterflyblog/categories/"><div class="headline">Categories</div><div class="length-num">2</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/butterflyblog/"><span> 首页</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-code"></i><span> Algorithm</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/butterflyblog/algorithm/hot100/"><span> Hot100</span></a></li><li><a class="site-page child" href="/butterflyblog/algorithm/labuladong/"><span> labuladong</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-robot"></i><span> AI</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/butterflyblog/ai/cs188/"><span> cs188</span></a></li><li><a class="site-page child" href="/butterflyblog/ai/cs229/"><span> cs229</span></a></li><li><a class="site-page child" href="/butterflyblog/ai/cs285/"><span> cs285</span></a></li><li><a class="site-page child" href="/butterflyblog/ai/llm/"><span> llm-basic</span></a></li></ul></div></div></div></div><div class="page type-page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/butterflyblog/"><span class="site-name">Wardell-H's Blog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/butterflyblog/"><span> 首页</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-code"></i><span> Algorithm</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/butterflyblog/algorithm/hot100/"><span> Hot100</span></a></li><li><a class="site-page child" href="/butterflyblog/algorithm/labuladong/"><span> labuladong</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-robot"></i><span> AI</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/butterflyblog/ai/cs188/"><span> cs188</span></a></li><li><a class="site-page child" href="/butterflyblog/ai/cs229/"><span> cs229</span></a></li><li><a class="site-page child" href="/butterflyblog/ai/cs285/"><span> cs285</span></a></li><li><a class="site-page child" href="/butterflyblog/ai/llm/"><span> llm-basic</span></a></li></ul></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><h1 class="title-seo">AI Notes</h1></header><main class="layout" id="content-inner"><div id="page"><div class="page-title">AI Notes</div><div class="container" id="article-container"><h1 id="AI-Notes"><a href="#AI-Notes" class="headerlink" title="AI Notes"></a>AI Notes</h1><blockquote>
+<p>这个页面作为 AI 学习总入口，统一收纳课程笔记、概念整理和零散博客。</p>
+</blockquote>
+<h2 id="学习地图"><a href="#学习地图" class="headerlink" title="学习地图"></a>学习地图</h2><h3 id="课程主线"><a href="#课程主线" class="headerlink" title="课程主线"></a>课程主线</h3><ul>
+<li><code>CS188</code>：强化学习 / 搜索 / 概率推断 / 决策</li>
+<li><code>CS229</code>：机器学习基础 / 生成判别模型 / 优化 / 泛化</li>
+<li><code>CS285</code>：深度强化学习 / Policy Gradient / Actor-Critic / Model-Based RL</li>
+</ul>
+<h3 id="主题主线"><a href="#主题主线" class="headerlink" title="主题主线"></a>主题主线</h3><ul>
+<li>机器学习基础</li>
+<li>强化学习基础</li>
+<li>大模型基础概念</li>
+<li>Transformer / Attention / Tokenizer / Embedding</li>
+<li>训练范式：Pretrain / SFT / RLHF / DPO</li>
+<li>推理部署：KV Cache / Quantization / RAG / Agent</li>
+</ul>
+<hr>
+<h2 id="一、课程笔记总览"><a href="#一、课程笔记总览" class="headerlink" title="一、课程笔记总览"></a>一、课程笔记总览</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>内容</th>
+<th>状态</th>
+<th>入口</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CS188</td>
+<td>Berkeley AI 导论</td>
+<td>待开始</td>
+<td>见下方</td>
+<td>搜索、博弈、MDP、RL</td>
+</tr>
+<tr>
+<td>CS229</td>
+<td>Stanford 机器学习</td>
+<td>待开始</td>
+<td>见下方</td>
+<td>数学基础和经典 ML</td>
+</tr>
+<tr>
+<td>CS285</td>
+<td>Berkeley Deep RL</td>
+<td>待开始</td>
+<td>见下方</td>
+<td>深度强化学习主线</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="二、CS188-笔记框架"><a href="#二、CS188-笔记框架" class="headerlink" title="二、CS188 笔记框架"></a>二、CS188 笔记框架</h2><h3 id="建议栏目"><a href="#建议栏目" class="headerlink" title="建议栏目"></a>建议栏目</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>主题</th>
+<th>状态</th>
+<th>笔记链接</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Course Overview</td>
+<td>已写</td>
+<td><a href="./cs188/01-course-overview/">查看</a></td>
+<td>课程结构总览</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Search Problems</td>
+<td>待写</td>
+<td></td>
+<td>DFS / BFS / UCS / A*</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Adversarial Search</td>
+<td>待写</td>
+<td></td>
+<td>Minimax / Alpha-Beta</td>
+</tr>
+<tr>
+<td>4</td>
+<td>CSP</td>
+<td>待写</td>
+<td></td>
+<td>回溯、剪枝、启发式</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Probability</td>
+<td>待写</td>
+<td></td>
+<td>Bayes Net / HMM</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Inference</td>
+<td>待写</td>
+<td></td>
+<td>Variable Elimination / Sampling</td>
+</tr>
+<tr>
+<td>7</td>
+<td>MDP</td>
+<td>待写</td>
+<td></td>
+<td>Bellman Equation</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Reinforcement Learning</td>
+<td>待写</td>
+<td></td>
+<td>Value Iteration / Q-Learning</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="推荐写法"><a href="#推荐写法" class="headerlink" title="推荐写法"></a>推荐写法</h3><p>每篇 CS188 笔记可以按下面结构写：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">## 主题名</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> 所属课程：CS188</span><br><span class="line"><span class="bullet">-</span> Lecture：</span><br><span class="line"><span class="bullet">-</span> 状态：</span><br><span class="line"><span class="bullet">-</span> 关键词：</span><br><span class="line"></span><br><span class="line"><span class="section">### 1. 核心问题</span></span><br><span class="line"></span><br><span class="line"><span class="section">### 2. 关键概念</span></span><br><span class="line"></span><br><span class="line"><span class="section">### 3. 公式 / 定义</span></span><br><span class="line"></span><br><span class="line"><span class="section">### 4. 算法流程</span></span><br><span class="line"></span><br><span class="line"><span class="section">### 5. 一个例子</span></span><br><span class="line"></span><br><span class="line"><span class="section">### 6. 易错点</span></span><br><span class="line"></span><br><span class="line"><span class="section">### 7. 我的理解</span></span><br></pre></td></tr></table></figure>
+<h2 id="三、CS229-笔记框架"><a href="#三、CS229-笔记框架" class="headerlink" title="三、CS229 笔记框架"></a>三、CS229 笔记框架</h2><h3 id="建议栏目-1"><a href="#建议栏目-1" class="headerlink" title="建议栏目"></a>建议栏目</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>主题</th>
+<th>状态</th>
+<th>笔记链接</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Supervised Learning</td>
+<td>已写</td>
+<td><a href="./cs229/01-supervised-learning-overview/">查看</a></td>
+<td>回归与分类</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Linear Regression</td>
+<td>待写</td>
+<td></td>
+<td>损失函数、梯度下降</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Logistic Regression</td>
+<td>待写</td>
+<td></td>
+<td>Sigmoid、MLE</td>
+</tr>
+<tr>
+<td>4</td>
+<td>GDA / Naive Bayes</td>
+<td>待写</td>
+<td></td>
+<td>生成模型</td>
+</tr>
+<tr>
+<td>5</td>
+<td>SVM</td>
+<td>待写</td>
+<td></td>
+<td>最大间隔分类</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Neural Networks</td>
+<td>待写</td>
+<td></td>
+<td>反向传播</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Bias &amp; Variance</td>
+<td>待写</td>
+<td></td>
+<td>过拟合与泛化</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Regularization</td>
+<td>待写</td>
+<td></td>
+<td>L1 / L2</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Unsupervised Learning</td>
+<td>待写</td>
+<td></td>
+<td>K-Means / PCA</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="推荐写法-1"><a href="#推荐写法-1" class="headerlink" title="推荐写法"></a>推荐写法</h3><p>每篇 CS229 笔记建议突出：</p>
+<ul>
+<li>问题定义</li>
+<li>概率视角</li>
+<li>优化目标</li>
+<li>推导过程</li>
+<li>几何意义</li>
+<li>与其他模型的对比</li>
+</ul>
+<h2 id="四、CS285-笔记框架"><a href="#四、CS285-笔记框架" class="headerlink" title="四、CS285 笔记框架"></a>四、CS285 笔记框架</h2><h3 id="建议栏目-2"><a href="#建议栏目-2" class="headerlink" title="建议栏目"></a>建议栏目</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>主题</th>
+<th>状态</th>
+<th>笔记链接</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Deep RL Overview</td>
+<td>已写</td>
+<td><a href="./cs285/01-deep-rl-overview/">查看</a></td>
+<td>课程总览</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Imitation Learning</td>
+<td>待写</td>
+<td></td>
+<td>BC / DAgger</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Policy Gradient</td>
+<td>待写</td>
+<td></td>
+<td>REINFORCE</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Actor-Critic</td>
+<td>待写</td>
+<td></td>
+<td>Advantage / Baseline</td>
+</tr>
+<tr>
+<td>5</td>
+<td>DQN 系列</td>
+<td>待写</td>
+<td></td>
+<td>Q-learning with NN</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Model-Based RL</td>
+<td>待写</td>
+<td></td>
+<td>Dynamics Model</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Exploration</td>
+<td>待写</td>
+<td></td>
+<td>探索与利用</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Offline RL</td>
+<td>待写</td>
+<td></td>
+<td>数据分布偏移</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="推荐写法-2"><a href="#推荐写法-2" class="headerlink" title="推荐写法"></a>推荐写法</h3><p>CS285 更适合写成“问题 - 方法 - 公式 - 实验现象 - 直觉理解”五段式。</p>
+<hr>
+<h2 id="五、大模型基础概念"><a href="#五、大模型基础概念" class="headerlink" title="五、大模型基础概念"></a>五、大模型基础概念</h2><p>这个区域适合放你说的“比较分散的 blog”。建议不要硬按课程拆，而是按概念聚类。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>主题</th>
+<th>状态</th>
+<th>文章链接</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LLM Basics</td>
+<td>Transformer 是什么</td>
+<td>已写</td>
+<td><a href="./llm/01-transformer-what-is-it/">查看</a></td>
+<td>总入口</td>
+</tr>
+<tr>
+<td>LLM Basics</td>
+<td>Token / Tokenization</td>
+<td>待写</td>
+<td></td>
+<td>BPE / SentencePiece</td>
+</tr>
+<tr>
+<td>LLM Basics</td>
+<td>Embedding</td>
+<td>待写</td>
+<td></td>
+<td>token embedding / positional embedding</td>
+</tr>
+<tr>
+<td>LLM Basics</td>
+<td>Self-Attention</td>
+<td>待写</td>
+<td></td>
+<td>QKV / scaled dot-product</td>
+</tr>
+<tr>
+<td>LLM Basics</td>
+<td>Multi-Head Attention</td>
+<td>待写</td>
+<td></td>
+<td>多头意义</td>
+</tr>
+<tr>
+<td>LLM Basics</td>
+<td>Positional Encoding</td>
+<td>待写</td>
+<td></td>
+<td>绝对位置 / RoPE</td>
+</tr>
+<tr>
+<td>LLM Basics</td>
+<td>FFN / Residual / LayerNorm</td>
+<td>待写</td>
+<td></td>
+<td>block 结构</td>
+</tr>
+<tr>
+<td>Training</td>
+<td>Pretraining</td>
+<td>待写</td>
+<td></td>
+<td>next token prediction</td>
+</tr>
+<tr>
+<td>Training</td>
+<td>SFT</td>
+<td>待写</td>
+<td></td>
+<td>指令微调</td>
+</tr>
+<tr>
+<td>Training</td>
+<td>RLHF / DPO</td>
+<td>待写</td>
+<td></td>
+<td>对齐路线</td>
+</tr>
+<tr>
+<td>Inference</td>
+<td>KV Cache</td>
+<td>待写</td>
+<td></td>
+<td>推理加速</td>
+</tr>
+<tr>
+<td>Inference</td>
+<td>Quantization</td>
+<td>待写</td>
+<td></td>
+<td>INT8 / 4bit</td>
+</tr>
+<tr>
+<td>Application</td>
+<td>RAG</td>
+<td>待写</td>
+<td></td>
+<td>检索增强</td>
+</tr>
+<tr>
+<td>Application</td>
+<td>Agent</td>
+<td>待写</td>
+<td></td>
+<td>工具调用与规划</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="六、建议的博客组织方式"><a href="#六、建议的博客组织方式" class="headerlink" title="六、建议的博客组织方式"></a>六、建议的博客组织方式</h2><p>你现在这部分内容建议拆成 3 类：</p>
+<h3 id="1-课程笔记"><a href="#1-课程笔记" class="headerlink" title="1. 课程笔记"></a>1. 课程笔记</h3><p>用于系统化记录：</p>
+<ul>
+<li><code>CS188</code></li>
+<li><code>CS229</code></li>
+<li><code>CS285</code></li>
+</ul>
+<h3 id="2-概念卡片"><a href="#2-概念卡片" class="headerlink" title="2. 概念卡片"></a>2. 概念卡片</h3><p>用于记录短小但重要的知识点：</p>
+<ul>
+<li>Transformer</li>
+<li>Attention</li>
+<li>RoPE</li>
+<li>RMSNorm</li>
+<li>MoE</li>
+<li>LoRA</li>
+<li>RAG</li>
+</ul>
+<h3 id="3-专题长文"><a href="#3-专题长文" class="headerlink" title="3. 专题长文"></a>3. 专题长文</h3><p>用于记录带对比和总结的内容：</p>
+<ul>
+<li><code>SFT vs RLHF vs DPO</code></li>
+<li><code>CNN / RNN / Transformer 演化</code></li>
+<li><code>生成式模型与判别式模型</code></li>
+<li><code>On-policy vs Off-policy</code></li>
+</ul>
+<hr>
+<h2 id="七、建议文章模板"><a href="#七、建议文章模板" class="headerlink" title="七、建议文章模板"></a>七、建议文章模板</h2><h3 id="模板-A：课程笔记"><a href="#模板-A：课程笔记" class="headerlink" title="模板 A：课程笔记"></a>模板 A：课程笔记</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title:</span><br><span class="line">date:</span><br><span class="line">categories:</span><br><span class="line"><span class="bullet">  -</span> AI</span><br><span class="line">tags:</span><br><span class="line"><span class="bullet">  -</span> CS188</span><br><span class="line"><span class="bullet">  -</span> CS229</span><br><span class="line"><span class="section">  - CS285</span></span><br><span class="line"><span class="section">---</span></span><br><span class="line"></span><br><span class="line"><span class="section">## 课程信息</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> 课程：</span><br><span class="line"><span class="bullet">-</span> Lecture：</span><br><span class="line"><span class="bullet">-</span> 主题：</span><br><span class="line"><span class="bullet">-</span> 关键词：</span><br><span class="line"></span><br><span class="line"><span class="section">## 核心内容</span></span><br><span class="line"></span><br><span class="line"><span class="section">## 关键公式</span></span><br><span class="line"></span><br><span class="line"><span class="section">## 方法流程</span></span><br><span class="line"></span><br><span class="line"><span class="section">## 示例 / 图示</span></span><br><span class="line"></span><br><span class="line"><span class="section">## 易错点</span></span><br><span class="line"></span><br><span class="line"><span class="section">## 我的理解</span></span><br></pre></td></tr></table></figure>
+<h3 id="模板-B：概念短文"><a href="#模板-B：概念短文" class="headerlink" title="模板 B：概念短文"></a>模板 B：概念短文</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title:</span><br><span class="line">date:</span><br><span class="line">categories:</span><br><span class="line"><span class="bullet">  -</span> AI</span><br><span class="line">tags:</span><br><span class="line"><span class="section">  - LLM</span></span><br><span class="line"><span class="section">---</span></span><br><span class="line"></span><br><span class="line"><span class="section">## 一句话定义</span></span><br><span class="line"></span><br><span class="line"><span class="section">## 为什么需要它</span></span><br><span class="line"></span><br><span class="line"><span class="section">## 它解决了什么问题</span></span><br><span class="line"></span><br><span class="line"><span class="section">## 它和相近概念的区别</span></span><br><span class="line"></span><br><span class="line"><span class="section">## 一个直观例子</span></span><br><span class="line"></span><br><span class="line"><span class="section">## 总结</span></span><br></pre></td></tr></table></figure>
+<h3 id="模板-C：对比类文章"><a href="#模板-C：对比类文章" class="headerlink" title="模板 C：对比类文章"></a>模板 C：对比类文章</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">## 对比对象</span></span><br><span class="line"></span><br><span class="line">| 维度 | A | B | C |</span><br><span class="line">| --- | --- | --- | --- |</span><br><span class="line">| 定义 |  |  |  |</span><br><span class="line">| 目标 |  |  |  |</span><br><span class="line">| 优点 |  |  |  |</span><br><span class="line">| 缺点 |  |  |  |</span><br><span class="line">| 适用场景 |  |  |  |</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="八、推荐先写的-10-篇"><a href="#八、推荐先写的-10-篇" class="headerlink" title="八、推荐先写的 10 篇"></a>八、推荐先写的 10 篇</h2><ol>
+<li>CS188 - Search Problems 总览</li>
+<li>CS188 - MDP 与 Bellman Equation</li>
+<li>CS229 - Linear Regression</li>
+<li>CS229 - Logistic Regression</li>
+<li>CS285 - Policy Gradient</li>
+<li>Transformer 基础结构</li>
+<li>Self-Attention 直觉理解</li>
+<li>Tokenizer 与 Token</li>
+<li>SFT、RLHF、DPO 区别</li>
+<li>RAG 基础框架</li>
+</ol>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/butterflyblog/img/curry-icon.jpg" onerror="this.onerror=null;this.src='/butterflyblog/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Ziqi Huang</div><div class="author-info-description"></div><div class="site-data"><a href="/butterflyblog/archives/"><div class="headline">Articles</div><div class="length-num">6</div></a><a href="/butterflyblog/tags/"><div class="headline">Tags</div><div class="length-num">16</div></a><a href="/butterflyblog/categories/"><div class="headline">Categories</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/wardell-H"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#AI-Notes"><span class="toc-number">1.</span> <span class="toc-text">AI Notes</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%A6%E4%B9%A0%E5%9C%B0%E5%9B%BE"><span class="toc-number">1.1.</span> <span class="toc-text">学习地图</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E4%B8%BB%E7%BA%BF"><span class="toc-number">1.1.1.</span> <span class="toc-text">课程主线</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E9%A2%98%E4%B8%BB%E7%BA%BF"><span class="toc-number">1.1.2.</span> <span class="toc-text">主题主线</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0%E6%80%BB%E8%A7%88"><span class="toc-number">1.2.</span> <span class="toc-text">一、课程笔记总览</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81CS188-%E7%AC%94%E8%AE%B0%E6%A1%86%E6%9E%B6"><span class="toc-number">1.3.</span> <span class="toc-text">二、CS188 笔记框架</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BB%BA%E8%AE%AE%E6%A0%8F%E7%9B%AE"><span class="toc-number">1.3.1.</span> <span class="toc-text">建议栏目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A8%E8%8D%90%E5%86%99%E6%B3%95"><span class="toc-number">1.3.2.</span> <span class="toc-text">推荐写法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81CS229-%E7%AC%94%E8%AE%B0%E6%A1%86%E6%9E%B6"><span class="toc-number">1.4.</span> <span class="toc-text">三、CS229 笔记框架</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BB%BA%E8%AE%AE%E6%A0%8F%E7%9B%AE-1"><span class="toc-number">1.4.1.</span> <span class="toc-text">建议栏目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A8%E8%8D%90%E5%86%99%E6%B3%95-1"><span class="toc-number">1.4.2.</span> <span class="toc-text">推荐写法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81CS285-%E7%AC%94%E8%AE%B0%E6%A1%86%E6%9E%B6"><span class="toc-number">1.5.</span> <span class="toc-text">四、CS285 笔记框架</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BB%BA%E8%AE%AE%E6%A0%8F%E7%9B%AE-2"><span class="toc-number">1.5.1.</span> <span class="toc-text">建议栏目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A8%E8%8D%90%E5%86%99%E6%B3%95-2"><span class="toc-number">1.5.2.</span> <span class="toc-text">推荐写法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5"><span class="toc-number">1.6.</span> <span class="toc-text">五、大模型基础概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E5%BB%BA%E8%AE%AE%E7%9A%84%E5%8D%9A%E5%AE%A2%E7%BB%84%E7%BB%87%E6%96%B9%E5%BC%8F"><span class="toc-number">1.7.</span> <span class="toc-text">六、建议的博客组织方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0"><span class="toc-number">1.7.1.</span> <span class="toc-text">1. 课程笔记</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%A6%82%E5%BF%B5%E5%8D%A1%E7%89%87"><span class="toc-number">1.7.2.</span> <span class="toc-text">2. 概念卡片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E4%B8%93%E9%A2%98%E9%95%BF%E6%96%87"><span class="toc-number">1.7.3.</span> <span class="toc-text">3. 专题长文</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%83%E3%80%81%E5%BB%BA%E8%AE%AE%E6%96%87%E7%AB%A0%E6%A8%A1%E6%9D%BF"><span class="toc-number">1.8.</span> <span class="toc-text">七、建议文章模板</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E6%9D%BF-A%EF%BC%9A%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0"><span class="toc-number">1.8.1.</span> <span class="toc-text">模板 A：课程笔记</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E6%9D%BF-B%EF%BC%9A%E6%A6%82%E5%BF%B5%E7%9F%AD%E6%96%87"><span class="toc-number">1.8.2.</span> <span class="toc-text">模板 B：概念短文</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E6%9D%BF-C%EF%BC%9A%E5%AF%B9%E6%AF%94%E7%B1%BB%E6%96%87%E7%AB%A0"><span class="toc-number">1.8.3.</span> <span class="toc-text">模板 C：对比类文章</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AB%E3%80%81%E6%8E%A8%E8%8D%90%E5%85%88%E5%86%99%E7%9A%84-10-%E7%AF%87"><span class="toc-number">1.9.</span> <span class="toc-text">八、推荐先写的 10 篇</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/butterflyblog/2026/03/13/hello-world/" title="Hello World">Hello World</a><time datetime="2026-03-13T05:36:29.507Z" title="Created 2026-03-13 13:36:29">2026-03-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/butterflyblog/algorithm/labuladong/01-stl-overview/" title="labuladong 01｜前言：标准模板库 STL">labuladong 01｜前言：标准模板库 STL</a><time datetime="2026-03-13T02:00:00.000Z" title="Created 2026-03-13 10:00:00">2026-03-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/butterflyblog/ai/cs188/01-course-overview/" title="CS188 - Course Overview">CS188 - Course Overview</a><time datetime="2026-03-12T16:00:00.000Z" title="Created 2026-03-13 00:00:00">2026-03-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/butterflyblog/ai/cs229/01-supervised-learning-overview/" title="CS229 - Supervised Learning Overview">CS229 - Supervised Learning Overview</a><time datetime="2026-03-12T16:00:00.000Z" title="Created 2026-03-13 00:00:00">2026-03-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/butterflyblog/ai/cs285/01-deep-rl-overview/" title="CS285 - Deep RL Overview">CS285 - Deep RL Overview</a><time datetime="2026-03-12T16:00:00.000Z" title="Created 2026-03-13 00:00:00">2026-03-13</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>Categories</span>
+            
+          </div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/butterflyblog/categories/AI/"><span class="card-category-list-name">AI</span><span class="card-category-list-count">4</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/butterflyblog/categories/Algorithm/"><span class="card-category-list-name">Algorithm</span><span class="card-category-list-count">1</span></a></li>
+          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>Tags</span></div><div class="card-tag-cloud"><a href="/butterflyblog/tags/Attention/" style="font-size: 1.1em; color: #999">Attention</a> <a href="/butterflyblog/tags/LLM/" style="font-size: 1.1em; color: #999">LLM</a> <a href="/butterflyblog/tags/Transformer/" style="font-size: 1.1em; color: #999">Transformer</a> <a href="/butterflyblog/tags/Search/" style="font-size: 1.1em; color: #999">Search</a> <a href="/butterflyblog/tags/CS285/" style="font-size: 1.1em; color: #999">CS285</a> <a href="/butterflyblog/tags/labuladong/" style="font-size: 1.1em; color: #999">labuladong</a> <a href="/butterflyblog/tags/MDP/" style="font-size: 1.1em; color: #999">MDP</a> <a href="/butterflyblog/tags/Policy-Gradient/" style="font-size: 1.1em; color: #999">Policy Gradient</a> <a href="/butterflyblog/tags/Machine-Learning/" style="font-size: 1.1em; color: #999">Machine Learning</a> <a href="/butterflyblog/tags/Supervised-Learning/" style="font-size: 1.1em; color: #999">Supervised Learning</a> <a href="/butterflyblog/tags/STL/" style="font-size: 1.1em; color: #999">STL</a> <a href="/butterflyblog/tags/CS188/" style="font-size: 1.1em; color: #999">CS188</a> <a href="/butterflyblog/tags/C/" style="font-size: 1.1em; color: #999">C++</a> <a href="/butterflyblog/tags/Deep-RL/" style="font-size: 1.1em; color: #999">Deep RL</a> <a href="/butterflyblog/tags/CS229/" style="font-size: 1.1em; color: #999">CS229</a> <a href="/butterflyblog/tags/RL/" style="font-size: 1.1em; color: #999">RL</a></div></div><div class="card-widget card-archives">
+    <div class="item-headline">
+      <i class="fas fa-archive"></i>
+      <span>Archives</span>
+      
+    </div>
+  
+    <ul class="card-archive-list">
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/butterflyblog/archives/2026/03/">
+            <span class="card-archive-list-date">
+              March 2026
+            </span>
+            <span class="card-archive-list-count">6</span>
+          </a>
+        </li>
+      
+    </ul>
+  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Website Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article Count :</div><div class="item-count">6</div></div><div class="webinfo-item"><div class="item-name">Unique Visitors :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Page Views :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Last Update :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-03-13T09:01:25.781Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By Ziqi Huang</span><span class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.4</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/butterflyblog/js/utils.js?v=5.5.4"></script><script src="/butterflyblog/js/main.js?v=5.5.4"></script><div class="js-pjax"><script>(() => {
+  const loadMathjax = () => {
+    if (!window.MathJax) {
+      window.MathJax = {
+        loader: {
+          load: [
+            // Four font extension packages (optional)
+            //- '[tex]/bbm',
+            //- '[tex]/bboldx',
+            //- '[tex]/dsfont',
+            '[tex]/mhchem'
+          ],
+          paths: {
+            'mathjax-newcm': '[mathjax]/../@mathjax/mathjax-newcm-font',
+
+            //- // Four font extension packages (optional)
+            //- 'mathjax-bbm-extension': '[mathjax]/../@mathjax/mathjax-bbm-font-extension',
+            //- 'mathjax-bboldx-extension': '[mathjax]/../@mathjax/mathjax-bboldx-font-extension',
+            //- 'mathjax-dsfont-extension': '[mathjax]/../@mathjax/mathjax-dsfont-font-extension',
+            'mathjax-mhchem-extension': '[mathjax]/../@mathjax/mathjax-mhchem-font-extension'
+          }
+        },
+        output: {
+          font: 'mathjax-newcm',
+        },
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          tags: 'none',
+          packages: {
+            '[+]': [
+              'mhchem'
+            ]
+          }
+        },
+        chtml: {
+          scale: 1.1
+        },
+        options: {
+          enableMenu: true,
+          menuOptions: {
+            settings: {
+              enrich: false  // Turn off Braille and voice narration text automatic generation
+            }
+          },
+          renderActions: {
+            findScript: [10, doc => {
+              for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+                const display = !!node.type.match(/; *mode=display/)
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+                const text = document.createTextNode('')
+                node.parentNode.replaceChild(text, node)
+                math.start = {node: text, delim: '', n: 0}
+                math.end = {node: text, delim: '', n: 0}
+                doc.math.push(math)
+              }
+            }, '']
+          }
+        }
+      }
+
+      const script = document.createElement('script')
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@4.1.0/tex-mml-chtml.min.js'
+      script.id = 'MathJax-script'
+      script.async = true
+      document.head.appendChild(script)
+    } else {
+      MathJax.startup.document.state(0)
+      MathJax.texReset()
+      MathJax.typesetPromise()
+    }
+  }
+
+  btf.addGlobalFn('encrypt', loadMathjax, 'mathjax')
+  window.pjax ? loadMathjax() : window.addEventListener('load', loadMathjax)
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
