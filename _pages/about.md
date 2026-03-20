@@ -14,9 +14,9 @@ I am a M.S. student Candidate at the Intelligent Information Processing Lab, Dep
 
 My research interests lie at the intersection of **AI safety**, **AI Deception**, **Interpretability**. Specifically, I’m passionate about:
 
-- AI Safety & Interpretability
+- SAE and other interpretability methods
 - Reinforcement Learning & Alignment
-- I'm not very good at image processing and large multimodal models. :(
+- I'm not very good at CV and large multimodal models. :( 
 Email: 2253726 [at] tongji.edu.cn   /   hzq1915851440 [at] gmail.com
 
 
@@ -29,7 +29,7 @@ Email: 2253726 [at] tongji.edu.cn   /   hzq1915851440 [at] gmail.com
 
 ## News
 
-- **[2025/09]** I started my research on **AI Security**.
+- 
 
 ## Publication
 * indicates equal contribution
