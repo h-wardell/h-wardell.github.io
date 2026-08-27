@@ -23,7 +23,7 @@ Email: 2253726 [at] tongji.edu.cn   /   hzq1915851440 [at] gmail.com
 
 
 <p style="text-align: center;">
-  <a href="https://github.com/wardell-H" target="_blank" rel="noopener">Github</a> /
+  <a href="https://github.com/h-wardell" target="_blank" rel="noopener">Github</a> /
   <a href="https://x.com/wardell_h0111" target="_blank" rel="noopener">Twitter</a> /
   <a href="/images/wechat-qr.jpg" target="_blank" rel="noopener">Wechat</a>
 </p>
@@ -43,8 +43,8 @@ Email: 2253726 [at] tongji.edu.cn   /   hzq1915851440 [at] gmail.com
     <p style="margin:0 0 6px 0;"><em>xxxx 2026</em></p>
     <p style="margin:0 0 10px 0;">
       <a href="https://arxiv.org/abs/">arXiv</a> /
-      <a href="https://github.com/wardell-H/paper-example">Code</a> /
-      <a href="https://wardell-h.github.io/projects/CEVA/">Project</a>
+      <a href="https://github.com/h-wardell/paper-example">Code</a> /
+      <a href="https://h-wardell.github.io/projects/CEVA/">Project</a>
     </p>
     <p style="margin:0; line-height:1.45;">A brief summary: we study interpretable internal representations and propose a practical safety-alignment method for reducing deceptive behavior in LLMs.</p>
   </div>

@@ -2,7 +2,7 @@
 set -euo pipefail
 
 SRC="/home/huang/Blog/butterflyblog/public"
-DST="/home/huang/wardell-H.github.io/butterflyblog"
+DST="/home/huang/h-wardell.github.io/butterflyblog"
 
 # Optional: pass --yes to skip confirmation
 AUTO_YES="${1:-}"
