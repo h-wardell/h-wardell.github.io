@@ -7,18 +7,16 @@ redirect_from:
   - /about.html
 ---
 <h1>Ziqi Huang | 黄子棋</h1>
-Hi there! I am Ziqi Huang, a fourth-year undergraduate student at [Tongji University](https://cs.tongji.edu.cn/index.htm), majoring in Information Security, [Guohao Academic](https://ghc.tongji.edu.cn/).
-I am a M.S. student Candidate at the Intelligent Information Processing Lab, Department of Computer Science and Technology, Tongji University (Shanghai, China), under the supervision of Prof. [Zhihua Wei](https://cs.tongji.edu.cn/info/1061/2797.htm).
+Hi there! I am Ziqi Huang, a master's student at the Intelligent Information Processing Lab, [School of Computer Science and Technology](https://cs.tongji.edu.cn/index.htm), Tongji University (Shanghai, China), under the supervision of Prof. [Zhihua Wei](https://cs.tongji.edu.cn/info/1061/2797.htm).
 
 <!-- I have spent a wonderful semester at [Johns Hopkins University](https://www.jhu.edu/). Since then, I have been working closely with Prof. I want an intern opportunity :(-->
 
-My research interests lie at the intersection of **AI safety**, **AI Deception**, **Interpretability**. Specifically, I’m passionate about:
+My research interests lie in **AI safety** and **Interpretability**. Specifically, I’m passionate about:
 
-- SAE and other interpretability methods
-- Reinforcement Learning & Alignment
-- I'm not very good at CV and large multimodal models. :( 
+- AIGC Detection
+- LLM/MLLM post-training & Safety
 
-Email: 2253726 [at] tongji.edu.cn   /   hzq1915851440 [at] gmail.com
+Email: hzq1915851440 [at] gmail.com
 
 
 
